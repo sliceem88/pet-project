@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+
+  # Database container - MariaDB 10.7.3
+  db:
+    image: mariadb:10.7
+    restart: always
+    container_name: mariadb-container
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "4306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MARIADB_PASSWORD: example
+      MARIADB_USER: root
+      MARIADB_ROOT_PASSWORD: root
+  
+  # PHP conatiner - PHP 7.4 FPM
+  php:
+    image: php
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - db
+    container_name: php-container
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./app:/var/www/project
+
+  # NGINX container - Nginx 1.21.6
+  nginx:
+    image: nginx:1.21.6-alpine
+    container_name: nginx-container
+    depends_on:
+      - php
+    volumes:
+      - ./app:/var/www/project
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+    - "8080:80"
+
+  # NODE container - NodeJS 16
+  node:
+    image: node:16-alpine
+    working_dir: /var/www/project/
+    container_name: node-container
+    volumes:
+      - ./app:/var/www/project
