@@ -9,9 +9,16 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
 
-# Created by https://www.toptal.com/developers/gitignore/api/symfony,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=symfony,visualstudiocode
+
+# Created by https://www.toptal.com/developers/gitignore/api/symfony,visualstudiocode,yarn
+# Edit at https://www.toptal.com/developers/gitignore?templates=symfony,visualstudiocode,yarn
 
 ### Symfony ###
 # Cache and logs (Symfony2)
@@ -96,31 +103,6 @@
 # Ignore code-workspaces
 *.code-workspace
 
-# End of https://www.toptal.com/developers/gitignore/api/symfony,visualstudiocode
-
-###> symfony/webpack-encore-bundle ###
-/node_modules/
-/public/build/
-npm-debug.log
-yarn-error.log
-###< symfony/webpack-encore-bundle ###
-
-### react ###
-.DS_*
-*.log
-logs
-**/*.backup.*
-**/*.back.*
-
-node_modules
-bower_components
-
-*.sublime*
-
-psd
-thumb
-sketch
-
 ### yarn ###
 # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 
@@ -138,4 +120,4 @@ sketch
 # and uncomment the following lines
 # .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/react,yarn
+# End of https://www.toptal.com/developers/gitignore/api/symfony,visualstudiocode,yarn
