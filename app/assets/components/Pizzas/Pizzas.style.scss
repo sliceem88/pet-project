@@ -1,0 +1,42 @@
+.Pizza {
+  &-Menu {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-Item {
+    margin: 0 20px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 250px;
+    min-width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &-Title {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  &-Name {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  &-Price {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: italic;
+    color: red;
+    font-weight: 600;
+  }
+
+  &-Ingredients {
+    padding: 5px 0;
+  }
+}
