@@ -1,4 +1,4 @@
-Pet project Symfony + React + GraphQL + GatsbyJS
+Pet project Symfony + React + GraphQL
 ------------------------------------------------
 To spin up project do:
 ## make install
