@@ -9,3 +9,9 @@ up:
 
 down:
 	docker-compose down --remove-orphans
+
+enter-php:
+	docker exec -it php-container bash
+
+enter-db:
+	docker exec -it mariadb-container bash -c 'mysql -uroot -proot'
