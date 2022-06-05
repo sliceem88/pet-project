@@ -5,6 +5,7 @@ install:
 
 up:
 	docker-compose up -d --remove-orphans
+	@echo project is UP on host: http://localhost:8080/
 	docker-compose run --rm node yarn encore dev --watch
 
 down:

@@ -16,6 +16,11 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class OrdersRepository extends ServiceEntityRepository
 {
+    /**
+     * @var string
+     */
+    const UU_ID_KEY = 'uu_id';
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Orders::class);

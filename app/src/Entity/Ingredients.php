@@ -19,6 +19,9 @@ class Ingredients
     #[ORM\Column(type: 'float')]
     private $price;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $img;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,7 +56,20 @@ class Ingredients
         return [
             'id' => $this->id,
             'price' => $this->price,
-            'name' => $this->name
+            'name' => $this->name,
+            'img' => $this->img
         ];
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
+
+        return $this;
     }
 }
